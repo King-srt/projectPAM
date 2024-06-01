@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <stroke
+        android:width="2dp"
+        android:color="#69D6B7" /> <!-- Ubah warna dan ketebalan sesuai kebutuhan -->
+    <solid android:color="#00000000" /> <!-- Untuk membuat latar belakang transparan -->
+</shape>

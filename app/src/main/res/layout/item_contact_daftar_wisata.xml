@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    >
+
+<!--    android:background="@drawable/rv_item_contact_daftarwisata"-->
+    <!-- Container untuk satu item kontak -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <!-- Foto Kontak -->
+            <ImageView
+                android:id="@+id/image_contact"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/imageview_radius"
+                android:src="@drawable/rv_item_contact_daftarwisata"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Ikon Bookmark -->
+            <ImageView
+                android:id="@+id/addBookmark"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/baseline_bookmark_add_24"
+                app:layout_constraintStart_toStartOf="@id/image_contact"
+                app:layout_constraintTop_toTopOf="@id/image_contact" />
+
+
+            <!-- Container untuk teks -->
+
+            <ImageView
+                android:id="@+id/rating"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="128dp"
+                android:src="@drawable/baseline_star_24"
+                app:layout_constraintStart_toStartOf="@id/image_contact"
+                app:layout_constraintTop_toTopOf="@id/image_contact" />
+
+
+            <TextView
+                android:id="@+id/ratingAverage"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:text="5.0"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.010"
+                app:layout_constraintStart_toEndOf="@+id/rating"
+                app:layout_constraintTop_toBottomOf="@+id/image_contact"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <TextView
+                android:id="@+id/saveThisDestination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:background="@drawable/rounded_background"
+                android:paddingTop="12dp"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp"
+                android:paddingBottom="12dp"
+                android:text="Simpan"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toEndOf="@+id/ratingAverage"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                app:layout_constraintVertical_bias="0.885" />
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:text="Nama Tempat"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image_contact"
+                app:layout_constraintTop_toTopOf="@id/image_contact" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:text="Deskripsi singkat tentang tempat wisata"
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image_contact"
+                app:layout_constraintTop_toBottomOf="@id/text_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,88 @@
+<!-- rv_detail_wisata.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RV_detailWisata">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Tampilkan detail wisata -->
+
+
+            <ImageView
+                android:id="@+id/image_detail"
+                android:layout_width="match_parent"
+                android:layout_height="232dp"
+                android:src="@drawable/bromo" />
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:numStars="5"
+                android:stepSize="1"
+                android:rating="0"
+                android:scaleX="0.75"
+                android:scaleY="0.75"
+                />
+
+            <TextView
+                android:id="@+id/text_name_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Tempat"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/description_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi"
+                android:textSize="16sp" />
+
+            <!-- RecyclerView untuk komentar -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp" />
+
+            <!-- Tempat untuk menambahkan komentar -->
+            <EditText
+                android:id="@+id/edit_text_comment"
+                android:layout_width="374dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Tambahkan Komentar"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                app:layout_constraintTop_toBottomOf="@id/recycler_comments" />
+
+            <!-- Tombol Kirim -->
+            <Button
+                android:id="@+id/button_send_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Kirim"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_text_comment" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

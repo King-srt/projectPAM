@@ -1,0 +1,7 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Untuk teks dalam keadaan normal (tidak dipilih) -->
+    <item android:color="#98ADC8" android:state_checked="false"/>
+
+    <!-- Untuk teks dalam keadaan terpilih (dipilih) -->
+    <item android:color="#64BFDB" android:state_checked="true"/>
+</selector>
