@@ -34,7 +34,7 @@ public class addimagetodatabases extends AppCompatActivity {
     private static final int GALLERY_REQUEST_CODE = 100;
     private ImageView imageView;
     private EditText editTextName,editCityName,editAddressName;
-    private EditText editTextDescription;
+    private EditText editTextDescription,editLittleDesc;
     private Button buttonAdd;
     private Uri imageUri;
 
@@ -55,6 +55,7 @@ public class addimagetodatabases extends AppCompatActivity {
         editCityName = findViewById(R.id.editTextCityName);
         editTextDescription = findViewById(R.id.editTextDescription);
         buttonAdd = findViewById(R.id.buttonAddData);
+        editLittleDesc = findViewById(R.id.editTextDescLittle);
         String firebaseUrl = "https://login-projectpam-default-rtdb.asia-southeast1.firebasedatabase.app/";
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseUrl);
         destReference = firebaseDatabase.getReference("destination");
@@ -98,6 +99,7 @@ public class addimagetodatabases extends AppCompatActivity {
         final String description = editTextDescription.getText().toString().trim();
         final String city= editCityName.getText().toString().trim();
         final String address = editAddressName.getText().toString().trim();
+        final String littleDesc = editLittleDesc.getText().toString().trim();
 
         if (TextUtils.isEmpty(name)) {
             editTextName.setError("Name is required");
@@ -131,7 +133,7 @@ public class addimagetodatabases extends AppCompatActivity {
         UploadTask uploadTask = fileRef.putFile(imageUri);
         String id = destReference.push().getKey();
         String imageUrl = imageUri.toString();
-        Destination destination = new Destination(id, imageUrl, name, description,city,address);
+        Destination destination = new Destination(id, imageUrl, name, description,city,address,littleDesc);
        // firestoreDB.collection("daftarWisata").document(id).set(destination);
         destReference.child(id).setValue(destination);
         uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
@@ -165,6 +167,8 @@ public class addimagetodatabases extends AppCompatActivity {
                                     editTextDescription.setText("");
                                     editCityName.setText("");
                                     imageView.setImageDrawable(null);
+                                    editLittleDesc.setText("");
+                                    editAddressName.setText("");
                                     progressBar.setVisibility(View.GONE);
                                 }
                             })

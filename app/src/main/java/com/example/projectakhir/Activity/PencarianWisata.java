@@ -97,7 +97,7 @@ public class PencarianWisata extends AppCompatActivity {
                 performSearch();
             }
         });
-
+        progressBar.setVisibility(View.VISIBLE);
         mDestinationRef.orderBy("city").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -106,6 +106,7 @@ public class PencarianWisata extends AppCompatActivity {
                         for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                             Destination destination = documentSnapshot.toObject(Destination.class);
                             mDestinationList.add(destination);
+                            progressBar.setVisibility(View.GONE);
                         }
 
                         mAdapter = new DestinationAdapter(getApplicationContext(), mDestinationList);

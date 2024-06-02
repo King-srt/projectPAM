@@ -10,6 +10,16 @@ public class Destination {
     private String city;
     private String address;
 
+    public String getLittleDesc() {
+        return littleDesc;
+    }
+
+    public void setLittleDesc(String littleDesc) {
+        this.littleDesc = littleDesc;
+    }
+
+    private String littleDesc;
+
     public String getAddress() {
         return address;
     }
@@ -42,13 +52,14 @@ public class Destination {
         // Diperlukan konstruktor kosong untuk Firebase
     }
 
-    public Destination(String id, String imageUrl, String name, String description, String city, String address) {
+    public Destination(String id, String imageUrl, String name, String description, String city, String address, String littleDesc) {
         this.id = id;
         this.imageUrl = imageUrl;
         this.name = name;
         this.description = description;
         this.city=city;
         this.address= address;
+        this.littleDesc = littleDesc;
     }
 
 

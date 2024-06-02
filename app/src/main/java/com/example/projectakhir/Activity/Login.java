@@ -160,7 +160,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 Toast.makeText(this, "Email atau password tidak boleh kosong", Toast.LENGTH_SHORT).show();
             } else {
                 progressBar.setVisibility(View.VISIBLE);
-
                 // Authenticate using FirebaseAuth
                 mAuth.signInWithEmailAndPassword(emailS, passwordS)
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

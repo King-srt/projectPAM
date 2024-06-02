@@ -18,9 +18,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.projectakhir.Model.Comment;
 import com.example.projectakhir.Model.Rating;
+import com.example.projectakhir.Model.User;
 import com.example.projectakhir.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -88,6 +94,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
             ratingBar.setRating((float) comment.getRating());
             String floatRating = String.valueOf(comment.getRating());
             tvRatingText.setText(floatRating);
+
             usernameTextView.setText(comment.getUserName());
             messageTextView.setText(comment.getCommentText());
             String time = getFormattedDate(comment.getTimestamp());

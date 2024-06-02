@@ -151,6 +151,7 @@ public class RV_DaftarWisata extends AppCompatActivity {
                                 intent.putExtra("userName", name);
                                 intent.putExtra("userId", mAuth.getCurrentUser().getUid());
                                 intent.putExtra("rating", clickedDestination.getRating());
+                                intent.putExtra("image_addr",clickedDestination.getAddress());
                                 startActivity(intent);
                             }
                         });

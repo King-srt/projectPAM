@@ -160,7 +160,7 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
         // Method untuk mengikat data ke ViewHolder
         public void bind(Destination destination) {
             textName.setText(destination.getName());
-            description.setText(destination.getDescription());
+            description.setText(destination.getLittleDesc());
             Glide.with(mContext).load(destination.getImageUrl()).into(imageContact);
             calculateAndDisplayAvgRating(destination.getId(),avgRatingDest,ratingbar);
 

@@ -73,6 +73,7 @@ public class ActivityDetailWisata extends AppCompatActivity {
                 .into(imageView);
         String imageName = getIntent().getStringExtra("image_name");
         String imageDesc = getIntent().getStringExtra("image_desc");
+        String imageAddress = getIntent().getStringExtra("image_addr");
 
         TextView nameTextView = findViewById(R.id.tvTitle);
         TextView locationTextView = findViewById(R.id.tvLocation);
@@ -80,6 +81,7 @@ public class ActivityDetailWisata extends AppCompatActivity {
         Glide.with(this).load(imageUrl).into(imageView);
         nameTextView.setText(imageName);
         descriptionTextView.setText(imageDesc);
+        locationTextView.setText(imageAddress);
         fetchComments();
         Intent intent = getIntent();
         urlImages = intent.getStringExtra("image_url");
